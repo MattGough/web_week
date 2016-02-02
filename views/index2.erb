@@ -1,12 +1,21 @@
   <div style='border: 3px dashed red'> 
   <img src='http://bit.ly/1eze8aE'> 
   </div>
+  <% if @name != nil && @age != nil %>
     <h1> My name is <%= @name %> 
 	 
-      <% if @age %>
+      <% if @age != "" %>
    
-         and I am <%= @age%> year old.
+    and I am <%= @age %> year old.
     </h1>
+    <% end %>
+    <% end %>
   
-      <% end %>
+<form name="input" action='/named-cat'>
+  name: <input type="text" name="name">
+  age: <input type="text" name="age">
+  <input type="submit" value="Enter">
+  </form>
+
+
   
