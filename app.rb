@@ -11,16 +11,17 @@ end
 
 get '/random-cat' do
   @random_name = ["Amigo", "Oscar", "Viking"].shuffle.pop
-  erb(:index)
+  erb :index
 end
 
-get '/named-cat' do
+post '/named-cat' do
   p params
   @name = params[:name]
   @age  = params[:age]
-  erb(:index2)
+  erb :cat_view
 end
 
-# post '/named-cat' do
-#   @details = params[:]
-# end
+get '/cat-form' do
+  p params
+  erb :cat_form
+end
